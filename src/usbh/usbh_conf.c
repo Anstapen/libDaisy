@@ -178,6 +178,9 @@ void HAL_HCD_HC_NotifyURBChange_Callback(HCD_HandleTypeDef * hhcd,
                                          uint8_t             chnum,
                                          HCD_URBStateTypeDef urb_state)
 {
+    (void)hhcd;
+    (void)chnum;
+    (void)urb_state;
     /* To be used with OS to sync URB state with the global state machine */
 #if(USBH_USE_OS == 1)
     USBH_LL_NotifyURBChange(hhcd->pData);

@@ -19,6 +19,8 @@ extern "C"
 
     void DummyRxCallback(uint8_t* buf, uint32_t* size)
     {
+        (void)buf;
+        (void)size;
         // Do Nothing
     }
 

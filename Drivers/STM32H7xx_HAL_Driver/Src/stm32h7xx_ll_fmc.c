@@ -537,6 +537,7 @@ HAL_StatusTypeDef FMC_NAND_Init(FMC_NAND_TypeDef *Device, FMC_NAND_InitTypeDef *
   */
 HAL_StatusTypeDef FMC_NAND_CommonSpace_Timing_Init(FMC_NAND_TypeDef *Device, FMC_NAND_PCC_TimingTypeDef *Timing, uint32_t Bank)
 {
+    (void)Bank;
   /* Check the parameters */
   assert_param(IS_FMC_NAND_DEVICE(Device));
   assert_param(IS_FMC_SETUP_TIME(Timing->SetupTime));
@@ -564,6 +565,7 @@ HAL_StatusTypeDef FMC_NAND_CommonSpace_Timing_Init(FMC_NAND_TypeDef *Device, FMC
   */
 HAL_StatusTypeDef FMC_NAND_AttributeSpace_Timing_Init(FMC_NAND_TypeDef *Device, FMC_NAND_PCC_TimingTypeDef *Timing, uint32_t Bank)
 {
+    (void)Bank;
   /* Check the parameters */
   assert_param(IS_FMC_NAND_DEVICE(Device));
   assert_param(IS_FMC_SETUP_TIME(Timing->SetupTime));
@@ -589,6 +591,7 @@ HAL_StatusTypeDef FMC_NAND_AttributeSpace_Timing_Init(FMC_NAND_TypeDef *Device, 
   */
 HAL_StatusTypeDef FMC_NAND_DeInit(FMC_NAND_TypeDef *Device, uint32_t Bank)
 {
+    (void)Bank;
   /* Check the parameters */
   assert_param(IS_FMC_NAND_DEVICE(Device));
   assert_param(IS_FMC_NAND_BANK(Bank));
@@ -634,6 +637,7 @@ HAL_StatusTypeDef FMC_NAND_DeInit(FMC_NAND_TypeDef *Device, uint32_t Bank)
   */
 HAL_StatusTypeDef FMC_NAND_ECC_Enable(FMC_NAND_TypeDef *Device, uint32_t Bank)
 {
+    (void)Bank;
   /* Check the parameters */
   assert_param(IS_FMC_NAND_DEVICE(Device));
   assert_param(IS_FMC_NAND_BANK(Bank));
@@ -653,6 +657,7 @@ HAL_StatusTypeDef FMC_NAND_ECC_Enable(FMC_NAND_TypeDef *Device, uint32_t Bank)
   */
 HAL_StatusTypeDef FMC_NAND_ECC_Disable(FMC_NAND_TypeDef *Device, uint32_t Bank)
 {
+    (void)Bank;
   /* Check the parameters */
   assert_param(IS_FMC_NAND_DEVICE(Device));
   assert_param(IS_FMC_NAND_BANK(Bank));
@@ -673,6 +678,7 @@ HAL_StatusTypeDef FMC_NAND_ECC_Disable(FMC_NAND_TypeDef *Device, uint32_t Bank)
   */
 HAL_StatusTypeDef FMC_NAND_GetECC(FMC_NAND_TypeDef *Device, uint32_t *ECCval, uint32_t Bank, uint32_t Timeout)
 {
+    (void)Bank;
   uint32_t tickstart;
 
   /* Check the parameters */

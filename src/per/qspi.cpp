@@ -912,7 +912,7 @@ void* QSPIHandle::GetData(uint32_t offset)
 
 extern "C" void HAL_QSPI_MspInit(QSPI_HandleTypeDef* qspiHandle)
 {
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitTypeDef GPIO_InitStruct{};
     if(qspiHandle->Instance == QUADSPI)
     {
         /* QUADSPI clock enable */

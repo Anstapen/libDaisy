@@ -167,6 +167,7 @@ USBD_ClassTypeDef  USBD_CDC =
   USBD_CDC_GetFSCfgDesc,
   USBD_CDC_GetOtherSpeedCfgDesc,
   USBD_CDC_GetDeviceQualifierDescriptor,
+  NULL
 };
 
 __ALIGN_BEGIN uint8_t USBD_MIDI_CfgDesc[USB_MIDI_CONFIG_DESC_SIZ] __ALIGN_END = 
@@ -497,6 +498,7 @@ __ALIGN_BEGIN uint8_t USBD_CDC_OtherSpeedCfgDesc[USB_CDC_CONFIG_DESC_SIZ] __ALIG
   */
 static uint8_t  USBD_CDC_Init (USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
+    (void)cfgidx;
   uint8_t ret = 0U;
   USBD_CDC_HandleTypeDef   *hcdc;
 
@@ -574,6 +576,7 @@ static uint8_t  USBD_CDC_Init (USBD_HandleTypeDef *pdev, uint8_t cfgidx)
   */
 static uint8_t  USBD_CDC_DeInit (USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
+    (void)cfgidx;
   uint8_t ret = 0U;
 
   /* Close EP IN */

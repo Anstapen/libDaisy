@@ -7,6 +7,7 @@ void Switch::Init(dsy_gpio_pin pin,
                   Polarity     pol,
                   Pull         pu)
 {
+    (void)update_rate;
     last_update_ = System::GetNow();
     updated_     = false;
     state_       = 0x00;

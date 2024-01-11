@@ -173,11 +173,28 @@ class Logger<LOGGER_NONE>
 {
   public:
     Logger() {}                                               /**<  */
-    static void Print(const char* format, ...) {}             /**<  */
-    static void PrintLine(const char* format, ...) {}         /**<  */
-    static void StartLog(bool wait_for_pc = false) {}         /**<  */
-    static void PrintV(const char* format, va_list va) {}     /**<  */
-    static void PrintLineV(const char* format, va_list va) {} /**<  */
+    static void Print(const char* format, ...)
+    {
+        (void)format;
+    }             /**<  */
+    static void PrintLine(const char* format, ...)
+    {
+        (void)format;
+    }         /**<  */
+    static void StartLog(bool wait_for_pc = false)
+    {
+        (void)wait_for_pc;
+    }         /**<  */
+    static void PrintV(const char* format, va_list va)
+    {
+        (void)format;
+        (void)va;
+    }     /**<  */
+    static void PrintLineV(const char* format, va_list va)
+    {
+        (void)format;
+        (void)va;
+    } /**<  */
 };
 
 /** @} */

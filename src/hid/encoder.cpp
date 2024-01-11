@@ -7,6 +7,7 @@ void Encoder::Init(dsy_gpio_pin a,
                    dsy_gpio_pin click,
                    float        update_rate)
 {
+    (void)update_rate;
     last_update_ = System::GetNow();
     updated_     = false;
 

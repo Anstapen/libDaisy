@@ -382,9 +382,9 @@ System::BootInfo::Version System::GetBootloaderVersion()
 
 void System::ConfigureClocks()
 {
-    RCC_OscInitTypeDef       RCC_OscInitStruct   = {0};
-    RCC_ClkInitTypeDef       RCC_ClkInitStruct   = {0};
-    RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+    RCC_OscInitTypeDef       RCC_OscInitStruct{};
+    RCC_ClkInitTypeDef       RCC_ClkInitStruct{};
+    RCC_PeriphCLKInitTypeDef PeriphClkInitStruct{};
 
     /** Supply configuration update enable
   */
@@ -593,7 +593,7 @@ System::MemoryRegion System::GetMemoryRegion(uint32_t addr)
     if(addr >= D1_AXIFLASH_BASE
        && addr < D1_AXIFLASH_BASE + INTERNAL_FLASH_SIZE)
         return MemoryRegion::INTERNAL_FLASH;
-    if(addr >= D1_ITCMRAM_BASE && addr < D1_ITCMRAM_BASE + ITCMRAM_SIZE)
+    if(addr < D1_ITCMRAM_BASE + ITCMRAM_SIZE)
         return MemoryRegion::ITCMRAM;
     if(addr >= D1_DTCMRAM_BASE && addr < D1_DTCMRAM_BASE + DTCMRAM_SIZE)
         return MemoryRegion::DTCMRAM;

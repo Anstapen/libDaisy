@@ -77,6 +77,7 @@ const Diskio_drvTypeDef USBH_Driver = {
   */
 DSTATUS USBH_initialize(BYTE lun)
 {
+    (void)lun;
     /* CAUTION : USB Host library has to be initialized in the application */
 
     return RES_OK;

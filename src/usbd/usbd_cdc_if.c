@@ -111,6 +111,8 @@ CDC_ReceiveCallback rx_callback_fs = NULL;
 CDC_ReceiveCallback rx_callback_hs = NULL;
 void                dummy_rx_callback(uint8_t* buf, uint32_t* len)
 {
+    (void)buf;
+    (void)len;
     // do nothing
 }
 
@@ -206,6 +208,7 @@ static uint8_t line_coding_fs[7] = {0x00, 0xC2, 0x01, 0x00, 0x00, 0x00, 0x08};
 
 static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
 {
+    (void)length;
     /* USER CODE BEGIN 5 */
     switch(cmd)
     {
@@ -349,6 +352,7 @@ static uint8_t line_coding_hs[7] = {0x00, 0xC2, 0x01, 0x00, 0x00, 0x00, 0x08};
 
 static int8_t CDC_Control_HS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
 {
+    (void)length;
     /* USER CODE BEGIN 10 */
     switch(cmd)
     {

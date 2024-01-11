@@ -1118,16 +1118,19 @@ extern "C" void HAL_UART_ErrorCallback(UART_HandleTypeDef* huart)
 
 extern "C" void HAL_UART_AbortCpltCallback(UART_HandleTypeDef* huart)
 {
+    (void)huart;
     //    asm("bkpt 255");
 }
 
 extern "C" void HAL_UART_AbortTransmitCpltCallback(UART_HandleTypeDef* huart)
 {
+    (void)huart;
     //    asm("bkpt 255");
 }
 
 extern "C" void HAL_UART_AbortReceiveCpltCallback(UART_HandleTypeDef* huart)
 {
+    (void)huart;
     //    asm("bkpt 255");
 }
 

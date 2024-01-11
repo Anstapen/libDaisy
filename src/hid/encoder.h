@@ -50,7 +50,10 @@ class Encoder
     /** To be removed in breaking update
      * \param update_rate Does nothing
     */
-    inline void SetUpdateRate(float update_rate) {}
+    inline void SetUpdateRate(float update_rate)
+    {
+        (void)update_rate;
+    }
 
   private:
     uint32_t last_update_;

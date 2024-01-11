@@ -34,7 +34,7 @@ constexpr Pin PIN_KNOB_6     = seed::D21;
 static constexpr I2CHandle::Config petal_led_i2c_config
     = {I2CHandle::Config::Peripheral::I2C_1,
        {Pin(PORTB, 8), Pin(PORTB, 9)},
-       I2CHandle::Config::Speed::I2C_1MHZ};
+       I2CHandle::Config::Speed::I2C_1MHZ, I2CHandle::Config::Mode::I2C_MASTER};
 
 enum LedOrder
 {

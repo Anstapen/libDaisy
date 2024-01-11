@@ -125,8 +125,8 @@ TimerHandle::Result TimerHandle::Impl::Init(const TimerHandle::Config& config)
         Error_Handler();
     }
 
-    TIM_ClockConfigTypeDef  sClockSourceConfig = {0};
-    TIM_MasterConfigTypeDef sMasterConfig      = {0};
+    TIM_ClockConfigTypeDef  sClockSourceConfig{};
+    TIM_MasterConfigTypeDef sMasterConfig{};
     sClockSourceConfig.ClockSource             = TIM_CLOCKSOURCE_INTERNAL;
     if(HAL_TIM_ConfigClockSource(&tim_hal_handle_, &sClockSourceConfig)
        != HAL_OK)

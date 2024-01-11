@@ -71,7 +71,7 @@ SdramHandle::Result SdramHandle::DeInit()
 
 SdramHandle::Result SdramHandle::PeriphInit()
 {
-    FMC_SDRAM_TimingTypeDef SdramTiming = {0};
+    FMC_SDRAM_TimingTypeDef SdramTiming{};
     dsy_sdram.hsdram.Instance           = FMC_SDRAM_DEVICE;
     // Init
     dsy_sdram.hsdram.Init.SDBank             = FMC_SDRAM_BANK1;
@@ -190,7 +190,7 @@ static uint32_t FMC_Initialized = 0;
 
 static void HAL_FMC_MspInit(void)
 {
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitTypeDef GPIO_InitStruct{};
     if(FMC_Initialized)
     {
         return;
@@ -348,6 +348,7 @@ static void HAL_FMC_MspInit(void)
 
 void HAL_SDRAM_MspInit(SDRAM_HandleTypeDef *sdramHandle)
 {
+    (void)sdramHandle;
     /* USER CODE BEGIN SDRAM_MspInit 0 */
 
     /* USER CODE END SDRAM_MspInit 0 */
@@ -469,6 +470,7 @@ static void HAL_FMC_MspDeInit(void)
 
 void HAL_SDRAM_MspDeInit(SDRAM_HandleTypeDef *sdramHandle)
 {
+    (void)sdramHandle;
     /* USER CODE BEGIN SDRAM_MspDeInit 0 */
 
     /* USER CODE END SDRAM_MspDeInit 0 */

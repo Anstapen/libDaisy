@@ -35,7 +35,7 @@ SdmmcHandler::Result SdmmcHandler::Init(const Config& cfg)
 
 void HAL_SD_MspInit(SD_HandleTypeDef* sdHandle)
 {
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitTypeDef GPIO_InitStruct{};
     if(sdHandle->Instance == SDMMC1)
     {
         /* USER CODE BEGIN SDMMC1_MspInit 0 */

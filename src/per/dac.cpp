@@ -99,7 +99,7 @@ DacHandle::Result DacHandle::Impl::Init(const DacHandle::Config &config)
     if(config_.mode == Mode::DMA)
     {
         uint32_t                tim_base_freq, target_freq, period;
-        TIM_MasterConfigTypeDef tim_master_config = {0};
+        TIM_MasterConfigTypeDef tim_master_config{};
         hal_tim_.Instance                         = TIM6;
         hal_tim_.Init.CounterMode                 = TIM_COUNTERMODE_UP;
         hal_tim_.Init.ClockDivision               = TIM_CLOCKDIVISION_DIV1;
@@ -404,20 +404,24 @@ extern "C" void TIM6_DAC_IRQHandler(void)
 
 extern "C" void HAL_DAC_ConvCpltCallbackCh1(DAC_HandleTypeDef *hdac)
 {
+    (void)hdac;
     dac_handle.InternalCalllback(DacHandle::Channel::ONE, 1);
 }
 
 extern "C" void HAL_DAC_ConvHalfCpltCallbackCh1(DAC_HandleTypeDef *hdac)
 {
+    (void)hdac;
     dac_handle.InternalCalllback(DacHandle::Channel::ONE, 0);
 }
 
 extern "C" void HAL_DACEx_ConvHalfCpltCallbackCh2(DAC_HandleTypeDef *hdac)
 {
+    (void)hdac;
     dac_handle.InternalCalllback(DacHandle::Channel::TWO, 0);
 }
 extern "C" void HAL_DACEx_ConvCpltCallbackCh2(DAC_HandleTypeDef *hdac)
 {
+    (void)hdac;
     dac_handle.InternalCalllback(DacHandle::Channel::TWO, 1);
 }
 

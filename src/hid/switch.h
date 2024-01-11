@@ -93,7 +93,10 @@ class Switch
     /** Left for backwards compatability until next breaking change
      * \param update_rate Doesn't do anything
     */
-    inline void SetUpdateRate(float update_rate) {}
+    inline void SetUpdateRate(float update_rate)
+    {
+        (void)update_rate;
+    }
 
   private:
     uint32_t last_update_;

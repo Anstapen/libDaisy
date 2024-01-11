@@ -266,6 +266,7 @@ class LedDriverPca9685
     // called when an I2C transmission completes and the next driver must be updated
     static void TxCpltCallback(void* context, I2CHandle::Result result)
     {
+        (void)result;
         auto drv_ptr = reinterpret_cast<
             LedDriverPca9685<numDrivers, persistentBufferContents>*>(context);
         drv_ptr->ContinueTransmission();

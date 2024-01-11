@@ -142,6 +142,7 @@ bool USBHostHandle::GetPresent()
 // This isn't super useful for our typical code structure
 static void USBH_UserProcess(USBH_HandleTypeDef *phost, uint8_t id)
 {
+    (void)phost;
     auto &conf = msd_impl.GetConfig();
     switch(id)
     {

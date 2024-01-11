@@ -163,9 +163,9 @@ static int get_num_mux_pins_required(int num_mux_ch)
 }
 static void
                       write_mux_value(uint8_t chn, uint8_t idx, uint8_t num_mux_pins_to_write);
-static const uint32_t adc_channel_from_pin(dsy_gpio_pin* pin);
+static uint32_t adc_channel_from_pin(dsy_gpio_pin* pin);
 
-static const uint32_t adc_channel_from_pin(dsy_gpio_pin* pin)
+static uint32_t adc_channel_from_pin(dsy_gpio_pin* pin)
 {
     // For now just a rough switch case for all ADC_CHANNEL values
     dsy_gpio_pin adcpins[DSY_ADC_MAX_CHANNELS] = {
@@ -240,8 +240,8 @@ void AdcHandle::Init(AdcChannelConfig* cfg,
                      size_t            num_channels,
                      OverSampling      ovs)
 {
-    ADC_MultiModeTypeDef   multimode = {0};
-    ADC_ChannelConfTypeDef sConfig   = {0};
+    ADC_MultiModeTypeDef   multimode{};
+    ADC_ChannelConfTypeDef sConfig{};
     // Generic Init
     oversampling_ = ovs;
     // Set DMA buffers
@@ -593,6 +593,7 @@ extern "C"
      */
     void HAL_Injected_ConvCpltCallback(ADC_HandleTypeDef* hadc)
     {
+        (void)hadc;
 #if DEBUG
         asm("bkpt 255");
 #endif

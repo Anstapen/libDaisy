@@ -225,6 +225,7 @@ void BSP_SD_GetCardInfo(DSY_SD_CardInfoTypeDef *CardInfo)
   */
 void HAL_SD_AbortCallback(SD_HandleTypeDef *hsd)
 {
+    (void)hsd;
     BSP_SD_AbortCallback();
 }
 
@@ -235,6 +236,7 @@ void HAL_SD_AbortCallback(SD_HandleTypeDef *hsd)
   */
 void HAL_SD_TxCpltCallback(SD_HandleTypeDef *hsd)
 {
+    (void)hsd;
     BSP_SD_WriteCpltCallback();
 }
 
@@ -245,6 +247,7 @@ void HAL_SD_TxCpltCallback(SD_HandleTypeDef *hsd)
   */
 void HAL_SD_RxCpltCallback(SD_HandleTypeDef *hsd)
 {
+    (void)hsd;
     BSP_SD_ReadCpltCallback();
 }
 

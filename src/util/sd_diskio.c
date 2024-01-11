@@ -87,6 +87,7 @@ const Diskio_drvTypeDef SD_Driver = {
 /* Private functions ---------------------------------------------------------*/
 static DSTATUS SD_CheckStatus(BYTE lun)
 {
+    (void)lun;
     Stat = STA_NOINIT;
 
     if(BSP_SD_GetCardState() == MSD_OK)
@@ -137,6 +138,7 @@ DSTATUS SD_status(BYTE lun)
   */
 DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
 {
+    (void)lun;
     DRESULT res = RES_ERROR;
     ReadStatus  = 0;
     uint32_t timeout;
@@ -194,6 +196,7 @@ DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
 #if _USE_WRITE == 1
 DRESULT SD_write(BYTE lun, const BYTE *buff, DWORD sector, UINT count)
 {
+    (void)lun;
     DRESULT res = RES_ERROR;
     WriteStatus = 0;
     uint32_t timeout;
@@ -257,6 +260,7 @@ DRESULT SD_write(BYTE lun, const BYTE *buff, DWORD sector, UINT count)
 #if _USE_IOCTL == 1
 DRESULT SD_ioctl(BYTE lun, BYTE cmd, void *buff)
 {
+    (void)lun;
     DRESULT         res = RES_ERROR;
     BSP_SD_CardInfo CardInfo;
 

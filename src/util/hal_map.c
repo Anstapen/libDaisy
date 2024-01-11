@@ -7,7 +7,7 @@
 // So that I can start to slowly replace HAL stuff over time.
 // Also I don't like that this throws a warning for every library file that doesn't use it...
 
-const static GPIO_TypeDef* gpio_hal_port_map[DSY_GPIO_LAST] = {
+static const GPIO_TypeDef* gpio_hal_port_map[DSY_GPIO_LAST] = {
     GPIOA,
     GPIOB,
     GPIOC,
@@ -22,7 +22,7 @@ const static GPIO_TypeDef* gpio_hal_port_map[DSY_GPIO_LAST] = {
     NULL,
 };
 
-const static uint16_t gpio_hal_pin_map[16] = {
+static const uint16_t gpio_hal_pin_map[16] = {
     GPIO_PIN_0,
     GPIO_PIN_1,
     GPIO_PIN_2,
